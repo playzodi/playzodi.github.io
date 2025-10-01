@@ -4,6 +4,7 @@
 - Word++
 - Word++ на русском
 - Word++ українською
+- Word++ Suomeksi
 
 This Privacy Policy governs the manner in which Evgeniy Zhuravlevich (PlayZodi) ("Developer," "we," or "us") collects, uses, maintains, and discloses information collected from users ("User" or "you") of mobile apps and games ("App") for Android operating system ("OS"). This Privacy Policy applies to the App and all services offered by the Developer.
 
@@ -29,7 +30,7 @@ The App is not intended for children. We do not knowingly collect personal infor
 
 The Developer reserves the right to update or change this Privacy Policy at any time. We will notify you of any changes by posting the new Privacy Policy on this page. It is your responsibility to review this Privacy Policy periodically for any updates or changes.
 
-This policy is effective as of 2025-09-24
+This policy is effective as of 2025-10-01
 
 6. **Contact Us**
 

@@ -1,25 +1,58 @@
+/* ===============================
+   Общие стили и базовая настройка
+=================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0f0f0f;
-    color: #ffffff;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a 0%, #0f0f0f 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 10px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(18, 130, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(18, 130, 255, 0.05) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* ===============================
+   Контейнер и структура
+=================================*/
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* ===============================
+   Шапка
+=================================*/
 .header {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0 20px 0;
+    animation: fadeIn 1s ease forwards;
 }
 
 .logo {
@@ -27,7 +60,15 @@ body {
     height: auto;
     display: block;
     margin: 0 auto 20px;
-    opacity: 1;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    filter: drop-shadow(0 8px 20px rgba(18, 130, 255, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 12px 25px rgba(18, 130, 255, 0.4));
 }
 
 .dev-link {
@@ -35,6 +76,8 @@ body {
     color: #1282ff;
     text-decoration: none;
     font-size: 1.1em;
+    position: relative;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
@@ -42,28 +85,62 @@ body {
     color: #5babff;
 }
 
+/* Плавное появление линии под ссылкой */
+.dev-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #1282ff;
+    transition: width 0.3s ease;
+}
+
+.dev-link:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   Игры (сетка)
+=================================*/
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
     gap: 40px;
     justify-content: center;
+    padding: 40px 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .game-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 25px;
+    padding: 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 5px rgba(18, 130, 255, 0.3);
 }
 
 .game-image {
     width: 410px;
     height: 200px;
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-image:hover {
-    transform: translateY(-15px) scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -72,7 +149,8 @@ body {
     margin-top: 15px;
     color: #1282ff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -80,10 +158,57 @@ body {
     color: #5babff;
 }
 
-/* Адаптивность для мобильных устройств */
+/* Линия под ссылкой */
+.game-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #1282ff;
+    transition: width 0.3s ease;
+}
+
+.game-link:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   Footer
+=================================*/
+.footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 60px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===============================
+   Анимации
+=================================*/
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Адаптивность
+=================================*/
 @media (max-width: 768px) {
     .games-grid {
-        grid-template-columns: 1fr; /* Один столбец на мобильных */
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .game-image {
@@ -93,10 +218,14 @@ body {
     }
 
     .header {
-        padding: 20px 0;
+        padding: 30px 0 10px 0;
     }
 
     .logo {
-        max-width: 250px;
+        max-width: 220px;
+    }
+
+    .container {
+        padding: 10px;
     }
 }

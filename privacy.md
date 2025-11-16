@@ -6,6 +6,7 @@
 - Word++ українською
 - Word++ Suomeksi
 - Word++ deutsch
+- Sadistic Poems of the '90s
 
 This Privacy Policy governs the manner in which Evgeniy Zhuravlevich (PlayZodi) ("Developer," "we," or "us") collects, uses, maintains, and discloses information collected from users ("User" or "you") of mobile apps and games ("App") for Android operating system ("OS"). This Privacy Policy applies to the App and all services offered by the Developer.
 

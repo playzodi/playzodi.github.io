@@ -32,7 +32,7 @@ The App is not intended for children. We do not knowingly collect personal infor
 
 The Developer reserves the right to update or change this Privacy Policy at any time. We will notify you of any changes by posting the new Privacy Policy on this page. It is your responsibility to review this Privacy Policy periodically for any updates or changes.
 
-This policy is effective as of 2025-10-01
+This policy is effective as of 2025-11-18
 
 6. **Contact Us**
 
